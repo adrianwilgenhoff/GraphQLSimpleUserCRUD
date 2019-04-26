@@ -1,0 +1,42 @@
+type Query {
+    users: [User]
+}
+
+type User {
+    id: Long
+    username: String
+    name: String
+    lastname: String
+    password: String
+}
+type Mutation {
+    newUser(id:Long, name: String , lastname: String , username: String , password: String) : User
+    deleteUser(id: ID!):Boolean
+}
+
+#Ejemplo de sintaxis en newUser
+#mutation {
+#            newUser(
+#					id:1, 
+# 		            name: "asdasd", 
+#                    lastname: "asdas2342", 
+#                    username: "user", 
+# 					password: "user")
+#        {
+#            name
+#        }
+#}
+
+#Ejemplo de sintaxis para borrar un usuario
+#mutation {
+#            deleteUser(id:3)
+# 		}
+
+#Ejemplo de sintaxis para listar usuarios
+#query{
+#        users {
+#                id
+#                name
+#                username
+#              }
+#}
